@@ -4,69 +4,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LearnTube Premium Design System */
+/* LearnTube Premium Dark Mode Design System */
 @layer base {
   :root {
-    /* Brand Colors - HSL */
+    /* Brand Colors - HSL (unchanged for contrast) */
     --navy: 215 85% 8%;           /* #0B1426 */
     --electric-blue: 217 91% 60%; /* #3B82F6 */
     --coral: 36 91% 50%;          /* #F59E0B */
     
-    /* Background System */
-    --background: 0 0% 100%;
-    --background-secondary: 220 13% 97%;
-    --background-muted: 215 28% 95%;
+    /* Dark Mode Background System */
+    --background: 215 85% 8%;          /* Deep navy #0B1426 */
+    --background-secondary: 220 13% 15%; /* Slate #1E293B */
+    --background-muted: 215 25% 20%;     /* Lighter slate #334155 */
     
-    /* Foreground System */
-    --foreground: 215 85% 8%;
-    --foreground-muted: 215 16% 47%;
-    --foreground-light: 215 20% 65%;
+    /* Dark Mode Foreground System */
+    --foreground: 210 40% 98%;          /* Bright white #F8FAFC */
+    --foreground-muted: 215 20% 75%;    /* Light gray #CBD5E1 */
+    --foreground-light: 215 16% 55%;    /* Muted gray #64748B */
     
-    /* Glass System */
-    --glass-bg: 0 0% 100% / 0.8;
-    --glass-border: 215 20% 88% / 0.6;
-    --glass-shadow: 215 85% 8% / 0.05;
+    /* Dark Mode Glass System */
+    --glass-bg: 255 255 255 / 0.08;     /* Dark glass with white transparency */
+    --glass-border: 255 255 255 / 0.12; /* Subtle white border */
+    --glass-shadow: 0 0 0 / 0.3;        /* Enhanced dark shadow */
     
-    /* Interactive System */
-    --primary: 217 91% 60%;        /* Electric Blue */
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 217 91% 55%;
+    /* Interactive System (Enhanced for dark mode) */
+    --primary: 217 91% 60%;        /* Electric Blue - pops on dark */
+    --primary-foreground: 215 85% 8%; /* Dark text on blue */
+    --primary-hover: 217 91% 65%;  /* Brighter blue on hover */
     
-    --secondary: 36 91% 50%;       /* Coral */
-    --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 36 91% 45%;
+    --secondary: 36 91% 50%;       /* Coral - beautiful on dark */
+    --secondary-foreground: 215 85% 8%; /* Dark text on coral */
+    --secondary-hover: 36 91% 55%; /* Brighter coral on hover */
     
-    --accent: 215 85% 8%;          /* Navy */
-    --accent-foreground: 0 0% 100%;
-    --accent-hover: 215 85% 12%;
+    --accent: 215 25% 20%;         /* Dark slate */
+    --accent-foreground: 210 40% 98%; /* White text */
+    --accent-hover: 215 25% 25%;   /* Lighter slate on hover */
     
-    /* Utility Colors */
-    --border: 215 28% 88%;
-    --input: 215 28% 94%;
-    --ring: 217 91% 60%;
-    --muted: 215 28% 95%;
-    --muted-foreground: 215 16% 47%;
+    /* Dark Mode Utility Colors */
+    --border: 215 25% 25%;         /* Dark border */
+    --input: 215 25% 18%;          /* Dark input background */
+    --ring: 217 91% 60%;           /* Blue focus ring */
+    --muted: 215 25% 18%;          /* Dark muted background */
+    --muted-foreground: 215 16% 55%; /* Muted text */
     
-    /* Design System */
+    /* Design System (unchanged) */
     --radius: 0.75rem;
     --radius-lg: 1rem;
     --radius-xl: 1.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Dark Mode Sidebar System */
+    --sidebar-background: 215 85% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 215 85% 8%;
+    --sidebar-accent: 215 25% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 25% 25%;
+    --sidebar-ring: 217 91% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark Mode Card System */
+    --card: 215 25% 18%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 25% 18%;
+    --popover-foreground: 210 40% 98%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 40% 98%;
   }
 
   .dark {
@@ -118,72 +120,74 @@
   }
 }
 
-/* Premium Dotted Background Patterns */
+/* Premium Dark Mode Dotted Background Patterns */
 @layer utilities {
   .dotted-bg-primary {
-    background-image: radial-gradient(circle at 1px 1px, hsl(var(--electric-blue) / 0.15) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--electric-blue) / 0.25) 1px, transparent 0);
     background-size: 20px 20px;
   }
   
   .dotted-bg-secondary {
-    background-image: radial-gradient(circle at 1px 1px, hsl(var(--navy) / 0.1) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, hsl(210 40% 98% / 0.08) 1px, transparent 0);
     background-size: 40px 40px;
   }
   
   .dotted-bg-hero {
     background-image: 
-      radial-gradient(circle at 1px 1px, hsl(var(--coral) / 0.08) 1px, transparent 0),
-      radial-gradient(circle at 1px 1px, hsl(var(--electric-blue) / 0.05) 1px, transparent 0);
-    background-size: 60px 60px, 20px 20px;
-    background-position: 0 0, 30px 30px;
+      radial-gradient(circle at 1px 1px, hsl(var(--coral) / 0.15) 1px, transparent 0),
+      radial-gradient(circle at 1px 1px, hsl(var(--electric-blue) / 0.12) 1px, transparent 0),
+      radial-gradient(circle at 1px 1px, hsl(210 40% 98% / 0.06) 1px, transparent 0);
+    background-size: 60px 60px, 20px 20px, 40px 40px;
+    background-position: 0 0, 30px 30px, 20px 20px;
   }
   
   .dotted-bg-dense {
-    background-image: radial-gradient(circle at 1px 1px, hsl(var(--electric-blue) / 0.2) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--electric-blue) / 0.3) 1px, transparent 0);
     background-size: 15px 15px;
   }
   
   .dotted-bg-fade {
-    background-image: radial-gradient(circle at 1px 1px, hsl(var(--navy) / 0.06) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, hsl(210 40% 98% / 0.1) 1px, transparent 0);
     background-size: 30px 30px;
   }
 }
 
-/* Glassmorphism Effects */
+/* Premium Dark Mode Glassmorphism Effects */
 @layer utilities {
   .glass-nav {
     backdrop-filter: blur(20px);
     background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
-    box-shadow: 0 8px 32px hsl(var(--glass-shadow));
+    box-shadow: 0 8px 32px hsl(0 0 0 / 0.4), 0 0 0 1px hsl(var(--glass-border));
   }
   
   .glass-card {
     backdrop-filter: blur(16px);
     background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
-    box-shadow: 0 8px 32px hsl(var(--glass-shadow));
+    box-shadow: 0 8px 32px hsl(0 0 0 / 0.3), 0 0 0 1px hsl(var(--glass-border));
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .glass-card:hover {
     backdrop-filter: blur(20px);
+    background: hsl(255 255 255 / 0.12);
     transform: translateY(-2px);
-    box-shadow: 0 12px 40px hsl(var(--glass-shadow));
+    box-shadow: 0 12px 40px hsl(0 0 0 / 0.4), 0 0 20px hsl(var(--electric-blue) / 0.1);
   }
   
   .glass-banner {
     backdrop-filter: blur(24px);
     background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
-    box-shadow: 0 12px 40px hsl(var(--glass-shadow));
+    box-shadow: 0 12px 40px hsl(0 0 0 / 0.4), 0 0 0 1px hsl(var(--glass-border));
   }
   
   .glass-demo {
     backdrop-filter: blur(12px);
     background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
-    box-shadow: 0 8px 32px hsl(var(--glass-shadow));
+    box-shadow: 0 8px 32px hsl(0 0 0 / 0.3), 0 0 0 1px hsl(var(--glass-border));
   }
 }
 
