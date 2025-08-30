@@ -84,9 +84,12 @@ const FAQSection = () => {
         {/* Additional Help */}
         <div className="text-center mt-12">
           <p className="text-foreground-light mb-4">Still have questions?</p>
-          <button className="text-primary hover:text-primary-hover font-semibold underline underline-offset-4">
+          <a 
+            href="mailto:sankar.chaitanya2025@gmail.com"
+            className="text-primary hover:text-primary-hover font-semibold underline underline-offset-4 transition-colors duration-200"
+          >
             Contact our team
-          </button>
+          </a>
         </div>
       </div>
     </section>

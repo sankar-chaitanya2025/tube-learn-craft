@@ -1,4 +1,5 @@
 import { Play, ArrowRight, FileText, Download } from 'lucide-react';
+import Image from 'next/image';
 import demoMockup from '@/assets/demo-mockup.jpg';
 
 const DemoSection = () => {
@@ -17,10 +18,11 @@ const DemoSection = () => {
         {/* Demo Mockup */}
         <div className="max-w-6xl mx-auto mb-16">
           <div className="glass-demo rounded-2xl p-8 animate-fade-in">
-            <img 
+            <Image 
               src={demoMockup} 
               alt="LearnTube Demo - YouTube video transformation into structured course"
               className="w-full rounded-xl shadow-2xl"
+              priority
             />
           </div>
         </div>
